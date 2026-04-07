@@ -8,11 +8,13 @@
 
 
 **📌 Overview**
+
 FinMind is a cloud-deployed multi-agent AI system that acts as a personal financial advisor — built specifically for unbanked and underserved populations in developing countries like Pakistan, India, Bangladesh, Nigeria, and Egypt.
 Most people in these regions have no access to banks, financial advisors, or budgeting tools. FinMind bridges that gap through natural language conversation. Users simply type their situation — and FinMind analyzes their finances, sets savings goals, recommends investments, and remembers everything for next time.
 Built for the Google Gen AI Academy APAC — Multi-Agent Productivity Assistant Challenge.
 
 **🎯 Problem Statement**
+
 Over 1.4 billion adults worldwide remain unbanked. In developing countries:
 
 People earn in cash with no digital tracking
@@ -38,14 +40,17 @@ FinMind solves all of this through a coordinated multi-agent AI pipeline.
 
 
 **🏗️ Architecture**
+
 <img width="446" height="573" alt="image" src="https://github.com/user-attachments/assets/72ab5cf7-5fd3-462d-a5bd-8b7e338860c2" />
 
 
 
 **🛠️ Tech Stack**
+
 LayerTechnologyAgent FrameworkGoogle ADKAI ModelGemini 2.5 FlashBackendFastAPI (Python)DeploymentGoogle Cloud RunDatabaseGoogle Cloud DatastoreExternal APImetals.live — real-time gold pricesLoggingGoogle Cloud LoggingDev UIADK Dev UI
 
 **🚀 Getting Started**
+
 Prerequisites
 
 Python 3.11+
@@ -53,28 +58,39 @@ Google Cloud account with billing enabled
 gcloud CLI installed and authenticated
 
 **1. Clone the repo**
+
 bashgit clone https://github.com/maheenfatim/finm-agent.git
 cd finm-agent
+
 **2. Install dependencies**
+
 bashpip install -r requirements.txt
+
 **3. Set up environment variables**
+
 Create a .env file in the root directory:
 MODEL=gemini-2.5-flash
 GOOGLE_CLOUD_PROJECT=your-project-id
+
 **4. Authenticate with Google Cloud**
+
 bashgcloud auth application-default login
 gcloud config set project your-project-id
+
 **5. Run locally with ADK Dev UI**
+
 bashadk web
 Then open http://localhost:8000 and select finmind_greeter from the agent dropdown.
 
 **☁️ Cloud Deploymen**t
+
 bashgcloud run deploy finm-agent \
   --source . \
   --region europe-west1 \
   --allow-unauthenticated
 
 **💬 Example Conversations**
+
 **Budget Analysis**
 
 User: "I earn PKR 50,000 and spend PKR 42,000 per month"
@@ -97,14 +113,11 @@ FinMind: Retrieves stored data from Cloud Datastore and recalls previous session
 
 
 **📁 Project Structure**
-finm-agent/
-├── agent.py           # All agents, tools, and workflow definition
-├── requirements.txt   # Python dependencies
-├── .env               # Environment variables (not committed)
-├── .gitignore
-└── README.md
+
+<img width="462" height="127" alt="structure" src="https://github.com/user-attachments/assets/28841c2f-5645-44c3-b030-5f27b58f364d" />
 
 **🌍 Impact**
+
 FinMind targets 24+ countries with multi-currency support, built for populations that have historically had no access to financial guidance. By combining multi-agent AI with persistent memory and local financial context, FinMind delivers expert-quality advice to anyone with a smartphone.
 
 **Developer**: Bisma Asif

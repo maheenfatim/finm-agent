@@ -38,33 +38,9 @@ FinMind solves all of this through a coordinated multi-agent AI pipeline.
 
 
 **🏗️ Architecture**
-User (Chat Interface)
-        │
-        ▼
-Root Agent: finmind_greeter  ←  Google ADK
-  • Receives user message
-  • Saves prompt to Datastore
-        │
-        ▼
-SequentialAgent: finmind_workflow
-        │
-        ├── Step 1: financial_researcher
-        │     • analyze_budget (income / expenses / savings rate)
-        │     • check_financial_alerts (overspending detection)
-        │     → Saves to: Budget & Alerts collections
-        │
-        ├── Step 2: goal_investment_planner
-        │     • create_goal_plan (target / months / feasibility)
-        │     • get_investment_advice (real-time gold API + local tips)
-        │     → Saves to: Goal & Investment collections
-        │
-        └── Step 3: response_formatter
-              • Synthesizes all agent outputs
-              • Delivers clean structured reply to user
-        │
-        ▼
-Google Cloud Datastore
-(UserPrompt | Budget | Alerts | Goal | Investment)
+<img width="446" height="573" alt="image" src="https://github.com/user-attachments/assets/72ab5cf7-5fd3-462d-a5bd-8b7e338860c2" />
+
+
 
 **🛠️ Tech Stack**
 LayerTechnologyAgent FrameworkGoogle ADKAI ModelGemini 2.5 FlashBackendFastAPI (Python)DeploymentGoogle Cloud RunDatabaseGoogle Cloud DatastoreExternal APImetals.live — real-time gold pricesLoggingGoogle Cloud LoggingDev UIADK Dev UI

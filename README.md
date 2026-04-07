@@ -30,12 +30,19 @@ FinMind solves all of this through a coordinated multi-agent AI pipeline.
 **✨ Features**
 
 💬 Natural language chat — No forms, just talk to the agent like a human
+
 📊 Budget analysis — Calculates savings rate, flags CRITICAL / LOW / MODERATE / GOOD status
+
 🎯 Goal planning — Sets savings targets and checks feasibility month by month
+
 📈 Investment advice — Real-time gold prices + halal banking + national savings recommendations
+
 🔔 Financial alerts — Detects overspending and triggers warnings automatically
+
 🧠 Session memory — All user data persisted in Google Cloud Datastore across sessions
+
 🔄 Multi-agent routing — Intelligent transfer between specialized sub-agents
+
 ☁️ Cloud deployed — Fully live on Google Cloud Run
 
 
@@ -85,8 +92,11 @@ Then open http://localhost:8000 and select finmind_greeter from the agent dropdo
 **☁️ Cloud Deploymen**t
 
 bashgcloud run deploy finm-agent \
+
   --source . \
+  
   --region europe-west1 \
+  
   --allow-unauthenticated
 
 **💬 Example Conversations**
@@ -94,21 +104,25 @@ bashgcloud run deploy finm-agent \
 **Budget Analysis**
 
 User: "I earn PKR 50,000 and spend PKR 42,000 per month"
+
 FinMind: Analyzes savings rate (16%), flags MODERATE status, suggests next steps
 
 **Goal Planning**
 
 User: "If I save PKR 5,000/month, how long to buy a laptop worth PKR 80,000?"
+
 FinMind: "It will take you 16 months to save PKR 80,000"
 
 **Investment Advice**
 
 User: "I have PKR 50,000 and want to invest"
+
 FinMind: Routes to investment agent → provides real-time gold price + halal banking options + diversification strategy
 
 **Session Memory**
 
 User: "What did I tell you about my income last time?"
+
 FinMind: Retrieves stored data from Cloud Datastore and recalls previous session
 
 

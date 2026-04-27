@@ -40,6 +40,8 @@ def add_prompt_to_state(tool_context: ToolContext, prompt: str) -> dict:
 # =============================================
 def load_chat_history(tool_context: ToolContext) -> dict:
     user_id = tool_context.state.get("USER_NAME", "User")
+    
+    # Load chat messages
     query = datastore_client.query(kind="ChatHistory")
     query.add_filter("user_id", "=", user_id)
     messages = []
@@ -49,8 +51,45 @@ def load_chat_history(tool_context: ToolContext) -> dict:
             "message": entity.get("message"),
             "time": entity.get("timestamp").strftime("%Y-%m-%d %H:%M") if entity.get("timestamp") else ""
         })
+    
+    # Load last budget data
+    budget_query = datastore_client.query(kind="Budget")
+    budget_query.order = ["-timestamp"]
+    last_budget = {}
+    for entity in budget_query.fetch(limit=1):
+        last_budget = {
+            "income": entity.get("income", 0),
+            "expenses": entity.get("expenses", 0),
+            "savings_rate": entity.get("savings_rate", 0),
+            "health_score": entity.get("health_score", 0),
+            "currency": entity.get("currency", "PKR"),
+            "status": entity.get("status", "")
+        }
+    
+    # Load last goal
+    goal_query = datastore_client.query(kind="Goal")
+    goal_query.order = ["-timestamp"]
+    last_goal = {}
+    for entity in goal_query.fetch(limit=1):
+        last_goal = {
+            "goal": entity.get("goal", ""),
+            "target_amount": entity.get("target_amount", 0),
+            "monthly_saving_needed": entity.get("monthly_saving_needed", 0),
+            "months": entity.get("months", 0),
+            "currency": entity.get("currency", "PKR")
+        }
+
+    # Save to state so agents can use it
     tool_context.state["CHAT_HISTORY"] = json.dumps(messages)
-    return {"history": messages, "count": len(messages)}
+    tool_context.state["LAST_BUDGET"] = json.dumps(last_budget)
+    tool_context.state["LAST_GOAL"] = json.dumps(last_goal)
+    
+    return {
+        "history": messages,
+        "count": len(messages),
+        "last_budget": last_budget,
+        "last_goal": last_goal
+    }
 
 # =============================================
 # TOOL 3: Save Chat Message
@@ -448,6 +487,7 @@ financial_researcher = Agent(
     3. Call analyze_budget with all available values
     4. Call check_financial_alerts
     5. Call get_financial_history to show progress vs last session
+    6. Call search_financial_news with query like "Pakistan gold price today" or "State Bank Pakistan rate"
 
     Detect user language (Urdu/Hindi/English) and respond in same language.
     If user mentions debt or loan, note it for goal_investment_planner.
@@ -570,10 +610,11 @@ root_agent = Agent(
 
     1. START: Greet warmly in English, ask name and country.
 
-    2. AFTER NAME:
+2. AFTER NAME:
        - Use add_prompt_to_state to save
        - Use load_chat_history to check history
-       - If returning: "Welcome back [name]! Last session your savings rate was X%. Shall we continue?"
+       - ALSO load previous budget data from Datastore by calling load_chat_history
+       - If returning: "Welcome back [name]! Last time your income was X and savings rate was Y%. Shall we continue with your financial plan?"
        - If new: "Great to meet you [name]! Let's get started."
 
     3. LANGUAGE DETECTION — VERY IMPORTANT:

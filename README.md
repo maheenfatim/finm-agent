@@ -2,8 +2,11 @@
 
  *1.4 billion people deserve financial guidance. FinMind makes that possible.*
 
-<img width="1600" height="677" alt="Screenshot 2026-04-07 173119" src="https://github.com/user-attachments/assets/c7319893-61fb-4e92-82b2-143f2c9d5713" />
-<img width="1569" height="661" alt="5" src="https://github.com/user-attachments/assets/ab557fda-16ce-48a3-8776-8c46a5428744" />
+<img width="1582" height="710" alt="demo1" src="https://github.com/user-attachments/assets/d36567a0-3a96-4a60-9c10-5fd02c26e442" />
+
+<img width="1584" height="719" alt="demo2" src="https://github.com/user-attachments/assets/c29b8c5e-6bb3-489b-ad88-3aa15591a2dc" />
+
+<img width="1580" height="709" alt="demo3" src="https://github.com/user-attachments/assets/8f71ef3b-c4da-438f-873e-610e8ffd96c2" />
 
 **📌 Overview**
 

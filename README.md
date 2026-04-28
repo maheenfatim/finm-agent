@@ -1,4 +1,4 @@
-**🧠 FinMind — AI-Powered Financial Advisor for Developing Countries**
+## 🧠 FinMind — AI-Powered Financial Advisor for Developing Countries
 
  *1.4 billion people deserve financial guidance. FinMind makes that possible.*
 
@@ -8,7 +8,7 @@
 
 <img width="1580" height="709" alt="demo3" src="https://github.com/user-attachments/assets/8f71ef3b-c4da-438f-873e-610e8ffd96c2" />
 
-**📌 Overview**
+## 📌 Overview:
 
 FinMind is a cloud-deployed multi-agent AI system that acts as a personal financial advisor — built specifically for unbanked and underserved populations in developing countries like Pakistan, India, Bangladesh, Nigeria, and Egypt.
 
@@ -16,7 +16,7 @@ Users simply chat in their own language — FinMind analyzes their budget, plans
 
 Built for the **Google Gen AI Academy APAC — Multi-Agent Productivity Assistant Challenge.**
 
-**🎯 Problem Statement**
+## 🎯 Problem Statement:
 
 Over 1.4 billion adults worldwide remain unbanked. In developing countries:
 
@@ -52,11 +52,11 @@ FinMind solves all of this through a coordinated multi-agent AI pipeline.
 | 17 | Conversational Flow — one question at a time | ADK Root Agent |
 
 
-## 🏗️ Architecture
+## 🏗️ Architecture:
 
 <img width="540" height="544" alt="architechture" src="https://github.com/user-attachments/assets/f74e7fbf-2965-4c7d-b8a2-5422d3da3ee7" />
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack:
 
 | Layer            | Technology                         | Why Chosen                                      |
 |------------------|------------------------------------|-------------------------------------------------|

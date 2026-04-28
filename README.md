@@ -29,7 +29,7 @@ FinMind solves all of this through a coordinated multi-agent AI pipeline.
 
 <img width="482" height="561" alt="flow diagram" src="https://github.com/user-attachments/assets/5c2920b6-0d29-48f7-98ad-b28231e62d47" />
 
-
+## Features:
 
 | # | Feature | Tool/Service |
 |---|---------|-------------|
@@ -129,6 +129,7 @@ adk deploy cloud_run \
 **💬 Example Conversations**
 
 **Budget with Categories**
+
 User: My income is PKR 80,000. Expenses PKR 55,000.
 
 Food: 15,000 Rent: 20,000 Transport: 8,000
@@ -142,6 +143,7 @@ Health Score: 93/100
 Emergency fund needed: PKR 165,000
 
 **Goal with Milestones**
+
 User: I want to buy a laptop for PKR 120,000 in 6 months
 
 FinMind: Monthly needed: PKR 20,000
@@ -153,6 +155,7 @@ FinMind: Monthly needed: PKR 20,000
 100% → PKR 120,000 (month 6) ✓
 
 **Debt Management**
+
 User: I have a loan of PKR 50,000 at 12% interest
 
 FinMind: Debt-free in 11 months
@@ -160,6 +163,7 @@ FinMind: Debt-free in 11 months
 Total interest: PKR 2,936
 
 **Multi-language**
+
 User: مجھے بچت کے بارے میں بتاؤ
 
 FinMind: آپ کی بچت کی شرح 31% ہے — بہترین! 🟢

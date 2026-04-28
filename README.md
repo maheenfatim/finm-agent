@@ -30,6 +30,7 @@ FinMind solves all of this through a coordinated multi-agent AI pipeline.
 <img width="482" height="561" alt="flow diagram" src="https://github.com/user-attachments/assets/5c2920b6-0d29-48f7-98ad-b28231e62d47" />
 
 
+
 | # | Feature | Tool/Service |
 |---|---------|-------------|
 | 1 | Expense Categories — food, rent, transport, entertainment | ADK Tools |

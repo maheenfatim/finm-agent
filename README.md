@@ -5,8 +5,6 @@
 <img width="1600" height="677" alt="Screenshot 2026-04-07 173119" src="https://github.com/user-attachments/assets/c7319893-61fb-4e92-82b2-143f2c9d5713" />
 <img width="1569" height="661" alt="5" src="https://github.com/user-attachments/assets/ab557fda-16ce-48a3-8776-8c46a5428744" />
 
-
-
 **📌 Overview**
 
 FinMind is a cloud-deployed multi-agent AI system that acts as a personal financial advisor — built specifically for unbanked and underserved populations in developing countries like Pakistan, India, Bangladesh, Nigeria, and Egypt.
@@ -75,67 +73,83 @@ Python 3.11+
 Google Cloud account with billing enabled
 gcloud CLI installed and authenticated
 
-**1. Clone the repo**
+### 1. Clone the repo
 
-bashgit clone https://github.com/maheenfatim/finm-agent.git
+```bash
+git clone https://github.com/maheenfatim/finm-agent.git
 cd finm-agent
+```
 
-**2. Install dependencies**
+### 2. Install dependencies
 
-bashpip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
+### 3. Set up environment variables
 
-**3. Set up environment variables**
-
-Create a .env file in the root directory:
 MODEL=gemini-2.5-flash
 GOOGLE_CLOUD_PROJECT=your-project-id
+GOOGLE_GENAI_USE_VERTEXAI=1
+GOOGLE_CLOUD_LOCATION=us-central1
 
-**4. Authenticate with Google Cloud**
+### 4. Authenticate with Google Cloud
 
-bashgcloud auth application-default login
+```bash
+gcloud auth application-default login
 gcloud config set project your-project-id
+```
 
-**5. Run locally with ADK Dev UI**
+### 5. Run locally
 
-bashadk web
-Then open http://localhost:8000 and select finmind_greeter from the agent dropdown.
+```bash
+adk web
+```
 
-**☁️ Cloud Deploymen**t
+## ☁️ Cloud Deployment
 
-bashgcloud run deploy finm-agent \
-
-  --source . \
-  
-  --region europe-west1 \
-  
-  --allow-unauthenticated
+```bash
+uvx --from google-adk==1.14.0 \
+adk deploy cloud_run \
+  --project=$PROJECT_ID \
+  --region=europe-west1 \
+  --service_name=finm-guide \
+  --with_ui \
+  . \
+  -- \
+  --service-account=$SERVICE_ACCOUNT
+```
 
 **💬 Example Conversations**
 
-**Budget Analysis**
+**Budget with Categories**
+User: My income is PKR 80,000. Expenses PKR 55,000.
+Food: 15,000 Rent: 20,000 Transport: 8,000
+FinMind: Savings rate 31% — GOOD 🟢
+Health Score: 93/100
+23% above Pakistan average!
+Emergency fund needed: PKR 165,000
 
-User: "I earn PKR 50,000 and spend PKR 42,000 per month"
+**Goal with Milestones**
+User: I want to buy a laptop for PKR 120,000 in 6 months
+FinMind: Monthly needed: PKR 20,000
+25% → PKR 30,000 (month 2)
+50% → PKR 60,000 (month 3)
+100% → PKR 120,000 (month 6) ✓
 
-FinMind: Analyzes savings rate (16%), flags MODERATE status, suggests next steps
+**Debt Management**
+User: I have a loan of PKR 50,000 at 12% interest
+FinMind: Debt-free in 11 months
+Total interest: PKR 2,936
 
-**Goal Planning**
+**Multi-language**
+User: مجھے بچت کے بارے میں بتاؤ
+FinMind: آپ کی بچت کی شرح 31% ہے — بہترین! 🟢
 
-User: "If I save PKR 5,000/month, how long to buy a laptop worth PKR 80,000?"
+## 🗺️ Roadmap
 
-FinMind: "It will take you 16 months to save PKR 80,000"
-
-**Investment Advice**
-
-User: "I have PKR 50,000 and want to invest"
-
-FinMind: Routes to investment agent → provides real-time gold price + halal banking options + diversification strategy
-
-**Session Memory**
-
-User: "What did I tell you about my income last time?"
-
-FinMind: Retrieves stored data from Cloud Datastore and recalls previous session
-
+- Email-based user authentication for completely isolated user profiles
+- WhatsApp and SMS integration via Twilio
+- Voice support for non-literate users
 
 **📁 Project Structure**
 
@@ -143,7 +157,7 @@ FinMind: Retrieves stored data from Cloud Datastore and recalls previous session
 
 **🌍 Impact**
 
-FinMind targets 24+ countries with multi-currency support, built for populations that have historically had no access to financial guidance. By combining multi-agent AI with persistent memory and local financial context, FinMind delivers expert-quality advice to anyone with a smartphone.
+FinMind targets 24+ countries with multi-currency support, built for populations that have historically had no access to financial guidance. By combining multi-agent AI with persistent memory, real-time data, and local financial context, FinMind delivers expert-quality advice to anyone with a smartphone.
 
 **Developer**: Bisma Asif
 📧 bismaasifbcs90@gmail.com

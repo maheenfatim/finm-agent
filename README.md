@@ -27,7 +27,7 @@ Over 1.4 billion adults worldwide remain unbanked. In developing countries:
 
 FinMind solves all of this through a coordinated multi-agent AI pipeline.
 
-<img width="521" height="609" alt="3" src="https://github.com/user-attachments/assets/d65b7c6c-de87-447c-a1f7-19b2a4b9a4c9" />
+<img width="482" height="561" alt="flow diagram" src="https://github.com/user-attachments/assets/5c2920b6-0d29-48f7-98ad-b28231e62d47" />
 
 
 | # | Feature | Tool/Service |
@@ -91,8 +91,11 @@ pip install -r requirements.txt
 ### 3. Set up environment variables
 
 MODEL=gemini-2.5-flash
+
 GOOGLE_CLOUD_PROJECT=your-project-id
+
 GOOGLE_GENAI_USE_VERTEXAI=1
+
 GOOGLE_CLOUD_LOCATION=us-central1
 
 ### 4. Authenticate with Google Cloud
@@ -126,27 +129,44 @@ adk deploy cloud_run \
 
 **Budget with Categories**
 User: My income is PKR 80,000. Expenses PKR 55,000.
+
 Food: 15,000 Rent: 20,000 Transport: 8,000
+
 FinMind: Savings rate 31% — GOOD 🟢
+
 Health Score: 93/100
+
 23% above Pakistan average!
+
 Emergency fund needed: PKR 165,000
 
 **Goal with Milestones**
 User: I want to buy a laptop for PKR 120,000 in 6 months
+
 FinMind: Monthly needed: PKR 20,000
+
 25% → PKR 30,000 (month 2)
+
 50% → PKR 60,000 (month 3)
+
 100% → PKR 120,000 (month 6) ✓
 
 **Debt Management**
 User: I have a loan of PKR 50,000 at 12% interest
+
 FinMind: Debt-free in 11 months
+
 Total interest: PKR 2,936
 
 **Multi-language**
 User: مجھے بچت کے بارے میں بتاؤ
+
 FinMind: آپ کی بچت کی شرح 31% ہے — بہترین! 🟢
+
+
+**📁 Project Structure**
+
+<img width="462" height="127" alt="structure" src="https://github.com/user-attachments/assets/28841c2f-5645-44c3-b030-5f27b58f364d" />
 
 ## 🗺️ Roadmap
 
@@ -154,9 +174,6 @@ FinMind: آپ کی بچت کی شرح 31% ہے — بہترین! 🟢
 - WhatsApp and SMS integration via Twilio
 - Voice support for non-literate users
 
-**📁 Project Structure**
-
-<img width="462" height="127" alt="structure" src="https://github.com/user-attachments/assets/28841c2f-5645-44c3-b030-5f27b58f364d" />
 
 **🌍 Impact**
 

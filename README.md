@@ -52,7 +52,7 @@ FinMind solves all of this through a coordinated multi-agent AI pipeline.
 | 17 | Conversational Flow — one question at a time | ADK Root Agent |
 
 
-**🏗️ Architecture**
+## 🏗️ Architecture
 
 <img width="540" height="544" alt="architechture" src="https://github.com/user-attachments/assets/f74e7fbf-2965-4c7d-b8a2-5422d3da3ee7" />
 
@@ -69,7 +69,7 @@ FinMind solves all of this through a coordinated multi-agent AI pipeline.
 | Currency API     | exchangerate-api                   | Live USD/PKR/INR/NGN conversion                 |
 | Logging          | Google Cloud Logging               | Centralized monitoring                          |
 
-**🚀 Getting Started**
+## 🚀 Getting Started
 
 Prerequisites
 
